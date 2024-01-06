@@ -4,7 +4,7 @@ import JacketImg from "../../assets/images/jacket.jpg";
 import Sweater from "../../assets/images/sweater.jpg";
 import MixSweater from "../../assets/images/mix_sweater.jpg"
 import ChristmasSweater from "../../assets/images/christmas_sweater.png"
-const ProductListComponent = () => {
+const ProductListComponent = ({SectionTitle}) => {
   const productList = [
     {
       title: "Jacket",
@@ -41,7 +41,7 @@ const ProductListComponent = () => {
         <div className="container">
           <div className="row">
             <div className="col-12 text-center m-5">
-              <h2>Products</h2>
+              <h2>{SectionTitle}</h2>
             </div>
             <div className="col-12">
               <div className="row">
