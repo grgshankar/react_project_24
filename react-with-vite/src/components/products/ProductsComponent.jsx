@@ -7,7 +7,7 @@ const ProductsComponent = ({ img, altName, title, price, exPrice }) => {
       <div className="col col-sm-12 col-xl-4 mb-4">
         <div className="card">
           <div className="img_wrap">
-            <NavLink to="details.html">
+            <NavLink to={"/product_details"}>
               <img src={img} alt={altName} />
             </NavLink>
           </div>
@@ -21,7 +21,7 @@ const ProductsComponent = ({ img, altName, title, price, exPrice }) => {
           </div>
           <div className="content_wrap p-3">
             <strong className="prod_name d-block text-center">
-              <NavLink to="details.html">{title}</NavLink>
+              <NavLink to={"/product_details"}>{title}</NavLink>
             </strong>
             <div className="d-flex flex-row justify-content-center">
               <span className="price_tag me-2">Rs.{price}</span>
