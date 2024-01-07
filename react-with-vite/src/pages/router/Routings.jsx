@@ -1,19 +1,33 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import HomePage from "../layouts/HomePage";
-import HeaderComponent from "../../components/common/HeaderComponent";
-import FooterComponent from "../../components/home/FooterComponent";
+import ProductPage from "../layouts/ProductPage";
 import ProductDetails from "../layouts/ProductDetails";
+import DashboardLayout from "../cms/DashboardLayout";
+import HomeLayout from "../layouts/HomeLayout";
 
 const Routings = () => {
   return (
     <>
       <BrowserRouter>
-        <HeaderComponent />
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/product_details" element={<ProductDetails />} />
+          <Route path="/" element={<HomeLayout />}>
+            <Route index element={<HomePage />} />
+            <Route path="/product_details/:id">
+              <Route
+                index
+                element={
+                  <>
+                    <ProductPage />
+                    <Outlet />
+                  </>
+                }
+              />
+              <Route path=":id" element={<ProductDetails />} />
+            </Route>
+          </Route>
+          <Route path="/admin" element={<DashboardLayout />} />
+            
         </Routes>
-        <FooterComponent />
       </BrowserRouter>
     </>
   );

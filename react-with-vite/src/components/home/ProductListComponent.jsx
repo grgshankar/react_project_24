@@ -7,6 +7,7 @@ import ChristmasSweater from "../../assets/images/christmas_sweater.png"
 const ProductListComponent = ({SectionTitle}) => {
   const productList = [
     {
+      id: 1,
       title: "Jacket",
       img: JacketImg,
       price: "1500",
@@ -14,6 +15,7 @@ const ProductListComponent = ({SectionTitle}) => {
       altName: "jacket",
     },
     {
+      id: 2,
       title: "Sweater",
       img: Sweater,
       price: "1500",
@@ -21,6 +23,7 @@ const ProductListComponent = ({SectionTitle}) => {
       altName: "sweater",
     },
     {
+      id: 3,
       title: "Mix Sweater",
       img: MixSweater,
       price: "2000",
@@ -28,6 +31,7 @@ const ProductListComponent = ({SectionTitle}) => {
       altName: "mix_sweater",
     },
     {
+      id: 4,
       title: "Christmas Sweater",
       img: ChristmasSweater,
       price: "1800",
@@ -49,6 +53,7 @@ const ProductListComponent = ({SectionTitle}) => {
                   return(
                      <ProductsComponent
                     key={index}
+                    id={item.id}
                     title={item.title}
                     price={item.price}
                     exPrice={item.exPrice}

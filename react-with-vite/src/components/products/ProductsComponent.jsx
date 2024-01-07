@@ -1,13 +1,14 @@
-import { NavLink } from "react-router-dom";
-import PropTypes from "prop-types"
+import { NavLink, useParams } from "react-router-dom";
 
 const ProductsComponent = ({ img, altName, title, price, exPrice }) => {
+    const id = useParams();
+    console.log(id);
   return (
     <>
       <div className="col col-sm-12 col-xl-4 mb-4">
         <div className="card">
           <div className="img_wrap">
-            <NavLink to={"/product_details"}>
+            <NavLink to={`/product_details/${id}`}>
               <img src={img} alt={altName} />
             </NavLink>
           </div>
@@ -21,7 +22,7 @@ const ProductsComponent = ({ img, altName, title, price, exPrice }) => {
           </div>
           <div className="content_wrap p-3">
             <strong className="prod_name d-block text-center">
-              <NavLink to={"/product_details"}>{title}</NavLink>
+              <NavLink to={`/product_details/${id}`}>{title}</NavLink>
             </strong>
             <div className="d-flex flex-row justify-content-center">
               <span className="price_tag me-2">Rs.{price}</span>
@@ -40,12 +41,4 @@ const ProductsComponent = ({ img, altName, title, price, exPrice }) => {
     </>
   );
 };
-ProductsComponent.propTypes = {
-    img: PropTypes.string.isRequired,
-    altName: PropTypes.string,
-    title: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
-    exPrice: PropTypes.string,
-  };
-
 export default ProductsComponent;
