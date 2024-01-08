@@ -8,7 +8,7 @@ const LoginComponent = () => {
         <div className="container">
             <div className="row">
                 <div className="col col-sm-12">
-                    <Form action="" className="register_form text-center mt-4 mb-4">
+                    <Form className="register_form text-center mt-4 mb-4">
                         <h1>Login</h1>
                         <div className="custom_form mt-3">
                             <input type="email" placeholder="Email Address" name="email" />

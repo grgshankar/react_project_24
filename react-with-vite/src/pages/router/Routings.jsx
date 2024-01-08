@@ -8,10 +8,12 @@ import Error404 from "../../components/common/Error404";
 import LoginComponent from "../auth/LoginComponent";
 import RegisterComponent from "../auth/RegisterComponent";
 import ForgotComponent from "../auth/ForgotComponent";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 const Routings = () => {
   return (
     <>
+    <ToastContainer />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomeLayout />}>

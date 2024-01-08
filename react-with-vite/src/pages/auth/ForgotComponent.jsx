@@ -1,14 +1,24 @@
 import { Form } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
+import { toast } from "react-toastify"
 
 const ForgotComponent = () => {
+    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        try{
+            toast.success("Login successfull");
+        }catch(err){
+            toast.error("Login Error");
+        }
+    }
   return (
     <>
     <div className="mainWrapper">
         <div className="container">
             <div className="row">
                 <div className="col col-sm-12">
-                    <Form action="" className="forgot_form text-center mt-4 mb-4">
+                    <Form onSubmit={handleSubmit} className="forgot_form text-center mt-4 mb-4">
                         <h1>Forget Password</h1>
                         <div className="custom_form mt-3">
                             <p>Please use the register email to reset the password.</p>
