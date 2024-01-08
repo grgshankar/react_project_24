@@ -7,9 +7,11 @@ import HomeLayout from "../layouts/HomeLayout";
 import Error404 from "../../components/common/Error404";
 import LoginComponent from "../auth/LoginComponent";
 import RegisterComponent from "../auth/RegisterComponent";
-import ForgotComponent from "../auth/ForgotComponent";
+import ForgotPage from "../auth/ForgotPage";
+import ForgotLayout from "../layouts/ForgotLayout"
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
+import SetPasswordPage from "../auth/SetPasswordPage";
 const Routings = () => {
   return (
     <>
@@ -32,7 +34,10 @@ const Routings = () => {
             </Route>
             <Route path="login" element={<LoginComponent />}/>
             <Route path="register" element={<RegisterComponent />}/>
-            <Route path="forget" element={<ForgotComponent />} />
+            <Route path="forget">
+              <Route index element={<ForgotPage />} />
+              <Route path="set-password" element={<SetPasswordPage />} />
+            </Route>
           </Route>
           <Route path="/admin" element={<DashboardLayout />} />
             

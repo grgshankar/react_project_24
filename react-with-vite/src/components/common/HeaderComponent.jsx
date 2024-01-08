@@ -40,8 +40,8 @@ const HeaderComponent = () =>{
                                     className="pro_count wishlist_count">2</span></a></li>
                         <li><a href="cart.html"><i className="fa-solid fa-cart-shopping"></i><span
                                     className="pro_count cart_count">4</span></a></li>
-                        <li><a href="register.html"><i className="fa-solid fa-user-plus"></i></a></li>
-                        <li><a href="logout.html"><i className="fa-solid fa-arrow-right-to-bracket"></i></a></li>
+                        <li><NavLink to={"/login"}><i className="fa-solid fa-user-plus"></i></NavLink></li>
+                        <li><NavLink to={"/"}><i className="fa-solid fa-arrow-right-to-bracket"></i></NavLink></li>
                     </ul>
                 </div>
             </div>

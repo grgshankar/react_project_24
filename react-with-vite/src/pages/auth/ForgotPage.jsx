@@ -2,8 +2,7 @@ import { Form } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 import { toast } from "react-toastify"
 
-const ForgotComponent = () => {
-    
+const ForgotPage = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         try{
@@ -37,4 +36,4 @@ const ForgotComponent = () => {
   )
 }
 
-export default ForgotComponent
+export default ForgotPage;
