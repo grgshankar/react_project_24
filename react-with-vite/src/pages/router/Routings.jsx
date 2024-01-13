@@ -6,16 +6,15 @@ import DashboardLayout from "../cms/DashboardLayout";
 import HomeLayout from "../layouts/HomeLayout";
 import Error404 from "../../components/common/Error404";
 import LoginComponent from "../auth/LoginComponent";
-import RegisterComponent from "../auth/RegisterComponent";
 import ForgotPage from "../auth/ForgotPage";
-import ForgotLayout from "../layouts/ForgotLayout"
+import RegisterPage from "../auth/RegisterPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import SetPasswordPage from "../auth/SetPasswordPage";
 const Routings = () => {
   return (
     <>
-    <ToastContainer />
+      <ToastContainer />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomeLayout />}>
@@ -32,15 +31,15 @@ const Routings = () => {
               />
               <Route path=":id" element={<ProductDetails />} />
             </Route>
-            <Route path="login" element={<LoginComponent />}/>
-            <Route path="register" element={<RegisterComponent />}/>
+            <Route path="login" element={<LoginComponent />} />
+            <Route path="register" element={<RegisterPage />} />
             <Route path="forget">
               <Route index element={<ForgotPage />} />
               <Route path="set-password" element={<SetPasswordPage />} />
             </Route>
           </Route>
           <Route path="/admin" element={<DashboardLayout />} />
-            
+
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>
