@@ -31,10 +31,10 @@ const RegisterComponent = ({registerSubmit}) => {
         <h1>Register</h1>
         <div className="custom_form mt-3">
           <input type="text" placeholder="Full Name" name="fullname" {...register("fullname", {required: true})} />
-          {errors.fullname? (<><em>Name is required</em></>): ""}
+          {errors.fullname? <><em>{errors.fullname? errors.fullname.msg : ""}</em></>: ""}
           
           <input type="email" placeholder="Email Address" name="email" {...register("email", {required: true})}/>
-          {errors.email ? (<><em>Email is required</em></>): ""}
+          {errors.email ? (<><em>{errors.email? errors.email.msg : ""}</em></>): ""}
           {/* <FormSelect>
             <option value="">--Select any one--</option>
             <option value="seller">Seller</option>
