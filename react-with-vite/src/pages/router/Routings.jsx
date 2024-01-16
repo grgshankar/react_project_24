@@ -33,10 +33,8 @@ const Routings = () => {
             </Route>
             <Route path="login" element={<LoginComponent />} />
             <Route path="register" element={<RegisterPage />} />
-            <Route path="forget">
-              <Route index element={<ForgotPage />} />
-              <Route path="set-password" element={<SetPasswordPage />} />
-            </Route>
+            <Route path="active/:token" element={<SetPasswordPage />} />
+            <Route path="forget-password" element={<ForgotPage />} />
           </Route>
           <Route path="/admin" element={<DashboardLayout />} />
 

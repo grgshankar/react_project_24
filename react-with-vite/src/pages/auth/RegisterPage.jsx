@@ -3,6 +3,7 @@ import RegisterComponent from "../../components/auth/RegisterComponent";
 import axios from "axios";
 import axiosInstance from "../../repository/axios.config";
 import authSvc from "./auth.service";
+import { toast } from "react-toastify";
 const RegisterPage = () => {
     const registerSubmit = async (data) =>{
         
@@ -10,9 +11,9 @@ const RegisterPage = () => {
             data.role = data.role.value;
             console.log(data);
             const response = await authSvc.registerProcess(data);
-            console.log("this is response", response);
+            toast.success(response.msg)
         }catch(err){
-            console.log("this is errors", err)
+            toast.error(err.message)
         }
     }
   return (

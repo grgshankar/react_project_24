@@ -22,16 +22,18 @@ const RegisterComponent = ({registerSubmit}) => {
             label: Yup.string().matches(/Seller|Buyer/),
         }).required(),
     });
-    const {register, handleSubmit, setValue, setError, formState: {errors}} = useForm();
+    const {register, handleSubmit, setValue, setError, formState: {errors}} = useForm({
+      resolver: yupResolver(yupScheme),
+    });
     
-      
+      console.log("errors=", errors);
   return (
     <>
       <Form onSubmit={handleSubmit(registerSubmit)} className="register_form text-center mt-4 mb-4">
         <h1>Register</h1>
         <div className="custom_form mt-3">
-          <input type="text" placeholder="Full Name" name="fullname" {...register("fullname", {required: true})} />
-          {errors.fullname? <><em>{errors.fullname? errors.fullname.msg : ""}</em></>: ""}
+          <input type="text" placeholder="Full Name" name="name" {...register("name", {required: true})} />
+          {errors.name? <><em>{errors.name? errors.name.msg : ""}</em></>: ""}
           
           <input type="email" placeholder="Email Address" name="email" {...register("email", {required: true})}/>
           {errors.email ? (<><em>{errors.email? errors.email.msg : ""}</em></>): ""}
@@ -62,8 +64,6 @@ const RegisterComponent = ({registerSubmit}) => {
             </span>
             {/* {errors?.image?.message} */}
           </div>
-          <input type="password" placeholder="Password" name="password" {...register("password", {required: true})}/>
-          {errors.password ? (<><em>Password is required</em></>) : ""}
           <div className="btn_wrap">
             <input type="submit" value="Register" className="btn btn-success" />
             <div className="redirect_link">

@@ -1,7 +1,17 @@
+import { useContext } from "react";
 import { Form } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import { ThemeContext } from "../../config/theme.context";
+import {FaMoon} from 'react-icons/fa';
+import { IoIosSunny } from "react-icons/io";
 
 const HeaderComponent = () =>{
+    const {theme, toggleTheme} = useContext(ThemeContext);
+    const switchTheme = (e) =>{
+        e.preventDefault();
+        toggleTheme(theme);
+
+    }
     const topBarSubmit = (e) => {
         e.preventDefault();
     }
@@ -31,6 +41,10 @@ const HeaderComponent = () =>{
                         </li>
                     </ul>
                 </div>
+                <NavLink to="/" className="theme_holder" onClick={switchTheme}>
+                    
+                    {theme==="light" ? <><IoIosSunny className="light_icon"/></>:<><FaMoon className="dark_icon"/></>}
+                </NavLink>
                 <Form onSubmit={topBarSubmit} className="d-flex me-3 search_bar" role="search">
                     <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
                 </Form>
